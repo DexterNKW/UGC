@@ -3,6 +3,8 @@ body {
     color: #FFFFFF;
     font-family: Arial, sans-serif;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -10,10 +12,21 @@ h1 {
     margin-top: 20px;
 }
 
+.logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
 #container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 50px);
 }
 
 form {
@@ -43,7 +56,6 @@ form {
 .input-container select {
     appearance: none;
     -webkit-appearance: none;
-    background-image: url('down-arrow.png');
     background-repeat: no-repeat;
     background-position: right center;
     background-size: 20px;
@@ -76,6 +88,41 @@ form {
     background-color: #1B5E20;
 }
 
+#messageOutputContainer {
+    margin-top: 20px;
+    background-color: #1E3640;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#messageOutputContainer textarea {
+    width: 400px;
+    height: 200px;
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #1E3640;
+    color: #FFFFFF;
+    resize: none;
+}
+
 .hidden {
     display: none;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+footer p {
+    color: #FFFFFF;
+    font-size: 14px;
+    text-align: center;
+    margin: 0;
 }
