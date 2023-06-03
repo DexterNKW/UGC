@@ -1,6 +1,8 @@
-document.getElementById("announcementForm").addEventListener("submit", generateMessage);
-document.getElementById("copyButton").addEventListener("click", copyToClipboard);
-document.getElementById("tipoSerataInput").addEventListener("change", toggleCustomSerataInput);
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("announcementForm").addEventListener("submit", generateMessage);
+    document.getElementById("copyButton").addEventListener("click", copyToClipboard);
+    document.getElementById("tipoSerataInput").addEventListener("change", toggleCustomSerataInput);
+});
 
 function toggleCustomSerataInput() {
     const customSerataContainer = document.getElementById("customSerataContainer");
@@ -28,6 +30,8 @@ function generateMessage(event) {
 
     document.getElementById("messageOutput").value = message;
     document.getElementById("messageOutputContainer").classList.remove("hidden");
+
+    return false;
 }
 
 function copyToClipboard() {
