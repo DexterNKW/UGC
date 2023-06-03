@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Generatore Annunci - UGC</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Annunci - UnderGround Club</h1>
+        <form id="announcementForm">
+            <div class="input-container">
+                <label for="dataInput">Data:</label>
+                <input type="date" id="dataInput" value="">
+            </div>
+            <div class="input-container">
+                <label for="tipoSerataInput">Tipo Serata:</label>
+                <select id="tipoSerataInput">
+                    <option value="disco">Disco</option>
+                    <option value="chill">Chill</option>
+                    <option value="custom">Custom</option>
+                </select>
+            </div>
+            <div id="customSerataContainer" class="input-container hidden">
+                <label for="customSerataInput">Tipo Serata Personalizzato:</label>
+                <input type="text" id="customSerataInput" value="">
+            </div>
+            <div class="input-container">
+                <label for="ingressoInput">Orario di Ingresso:</label>
+                <input type="time" id="ingressoInput" value="">
+            </div>
+            <div class="input-container">
+                <label for="startInput">Orario di Inizio:</label>
+                <input type="time" id="startInput" value="">
+            </div>
+            <div class="input-container">
+                <label for="chiusuraInput">Orario di Chiusura:</label>
+                <input type="time" id="chiusuraInput" value="">
+            </div>
+            <button type="submit" class="copy-button">Genera Annuncio</button>
+        </form>
+        <div id="messageOutputContainer" class="hidden">
+            <textarea id="messageOutput" readonly></textarea>
+            <button id="copyButton" class="copy-button">Copia Messaggio</button>
+        </div>
+    </div>
+</body>
+
+</html>
