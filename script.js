@@ -2,6 +2,8 @@ document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("announcementForm").addEventListener("submit", generateMessage);
     document.getElementById("copyButton").addEventListener("click", copyToClipboard);
     document.getElementById("tipoSerataInput").addEventListener("change", toggleCustomSerataInput);
+    document.addEventListener("visibilitychange", handleVisibilityChange);
+    window.addEventListener("focus", handleWindowFocus);
 });
 
 function toggleCustomSerataInput() {
@@ -38,6 +40,18 @@ function copyToClipboard() {
     const messageOutput = document.getElementById("messageOutput");
     messageOutput.select();
     document.execCommand("copy");
+}
+
+function handleVisibilityChange() {
+    if (document.visibilityState === "visible") {
+        document.title = "Generatore Annunci - UGC";
+    } else {
+        document.title = "UnderGround Club";
+    }
+}
+
+function handleWindowFocus() {
+    document.title = "Generatore Annunci - UGC";
 }
 
 class WhatsAppFormatter {
@@ -77,6 +91,11 @@ class WhatsAppFormatter {
             defaultIngresso = "*20:00*";
             defaultStart = "*20:30*";
             defaultChiusura = "*22:00*";
+        } else if (serata === "custom") {
+            defaultSerata = "_" + (customSerata || "Serata Custom") + "_";
+            defaultIngresso = "*20:30*";
+            defaultStart = "*21:00*";
+            defaultChiusura = "*01:00*";
         } else {
             defaultSerata = "_Serata Disco con DJ Set e angolo Bar_";
             defaultIngresso = "*20:30*";
@@ -86,7 +105,7 @@ class WhatsAppFormatter {
 
         let message = ":: 🪩 *ᑌᑎᗪᗴᖇᘜᖇOᑌᑎᗪ ᑕᒪᑌᗷ* 🪩 ::\n";
         message += "                ••• *S U M M E R* •••\n\n";
-        message += `${customSerata ? customSerata : defaultSerata}\n\n`;
+        message += `${defaultSerata}\n\n`;
         message += `   🗓️ *${formattedDate}*\n\n`;
         message += `   ➡️ Ingresso h. ${ingresso || defaultIngresso}\n`;
         message += `   ➡️ Start h. ${start || defaultStart}\n`;
