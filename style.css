@@ -15,13 +15,12 @@ h1 {
 .logo {
     width: 28%;
     height: auto;
-    margin-bottom: 20px;
 }
 
 #container {
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -45,12 +44,13 @@ form {
 }
 
 .input-container input,
-.input-container select {
+.input-container select,
+.input-container textarea {
     width: 50%;
     padding: 5px;
     border-radius: 5px;
     border: none;
-    background-color: #1E3640;
+    background-color: #202c33;
     color: #FFFFFF;
     box-sizing: border-box;
 }
@@ -69,41 +69,36 @@ form {
     height: 220px;
     margin: 20px auto;
     padding: 10px;
-    border-radius: 5px;
-    border: none;
-    background-color: #1E3640;
-    color: #FFFFFF;
     resize: none;
-    box-sizing: border-box;
 }
 
 .copy-button {
+    margin: 10px;
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
-    background-color: #2E7D32;
+    background-color: #005c4b;
     color: #FFFFFF;
     cursor: pointer;
     transition: background-color 0.3s;
+    position: relative;
+    display: inline-block;
 }
 
 .copy-button:hover {
-    background-color: #1B5E20;
+    background-color: #025144;
 }
 
 #messageOutputContainer {
-    margin-top: 20px;
     background-color: #1E3640;
-    padding: 20px;
+    padding: 5px;
     border-radius: 5px;
     text-align: center;
 }
 
 #messageOutputContainer textarea {
     width: 100%;
-    height: 260px;
-    margin: 10px auto;
-    padding: 10px;
+    padding: 40px 20px;
     border-radius: 5px;
     border: none;
     background-color: #1E3640;
@@ -112,14 +107,14 @@ form {
     box-sizing: border-box;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 800px) {
     #container {
         padding: 10px;
     }
 
     .input-container input,
     .input-container select {
-        width: calc(100% - 20px);
+        width: calc(100% - 30%);
         margin-left: 10px;
         margin-right: 10px;
     }
@@ -134,12 +129,12 @@ form {
 }
 
 footer {
-    position: fixed;
-    bottom: 0;
+    position: bottom;
     left: 0;
     width: 100%;
-    padding: 10px;
+    padding: 10px 0;
     background-color: #101D24;
+    display: inline-block;
 }
 
 footer p {
@@ -147,4 +142,100 @@ footer p {
     font-size: 12px;
     text-align: center;
     margin: 0;
+}
+
+.message-box {
+    position: relative;
+    background-color: #202c33;
+    border-radius: 8px;
+    padding: 10px 10px 0 10px;
+    margin-bottom: 5px;
+}
+
+.message-header {
+    color: #53bdeb;
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+.message-content {
+    color: #FFFFFF;
+    font-family: Consolas, Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, Courier, monospace;
+    padding: 5px;
+    text-align: left;
+}
+
+.message-timestamp {
+    font-size: 0.8em;
+    color: #B8B8B8;
+    text-align: right;
+    padding: 5px;
+}
+
+.highlight {
+    color: #B8B8B8;
+}
+
+.highlight-inner {
+    color: #FFFFFF;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.timestamp-time {
+    font-size: 0.8em;
+    color: #FFFFFF;
+}
+
+.highlighted-characters {
+    color: #B8B8B8;
+}
+
+#message-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.message-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 20px 5px 20px;
+}
+
+#message-header {
+    font-size: 15px;
+}
+
+#message-content {
+    font-size: 14px;
+}
+
+#timestamp {
+    font-size: 11px;
+}
+
+img.emoji {
+    height: 1em;
+    width: 1em;
+    margin: 0 .05em 0 .1em;
+    vertical-align: -0.1em;
+}
+
+#messageOutputContainer {
+    background-image: url('wallpaper.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    padding: 5px 5px 15px 5px;
 }
