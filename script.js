@@ -98,42 +98,41 @@ class WhatsAppFormatter {
       formattedDate = this.getFormattedDate(nextSaturday);
     }
 
-    const today = new Date();
-    const currentMonth = today.getMonth() + 1; // Nota che i mesi iniziano da 0 (gennaio) a 11 (dicembre).
+    const currentMonth = formattedDate.split(' ')[1].toLowerCase(); // Ottieni il mese dalla data formattata.
 
     let seasonText;
-    if (currentMonth >= 6 && currentMonth <= 8) {
-      seasonText = "S U M M E R";
+    if (["giugno", "luglio", "agosto"].includes(currentMonth)) {
+      seasonText = "                ••• *S U M M E R* •••";
     } else {
-      seasonText = "G O L D E N";
+      seasonText = "                 ••• *G O L D E N* •••";
     }
 
     let defaultSerata, defaultIngresso, defaultStart, defaultChiusura;
 
     if (serata === "disco") {
-      defaultSerata = `Serata Disco con DJ Set e angolo Bar (${seasonText})`;
+      defaultSerata = `Serata Disco con DJ Set e angolo Bar`;
       defaultIngresso = "20:30";
       defaultStart = "21:00";
       defaultChiusura = "01:00";
     } else if (serata === "chill") {
-      defaultSerata = `Serata Chill con Musica e angolo Bar (${seasonText})`;
+      defaultSerata = `Serata Chill con Musica e angolo Bar`;
       defaultIngresso = "20:00";
       defaultStart = "20:30";
       defaultChiusura = "22:00";
     } else if (serata === "custom") {
-      defaultSerata = customSerata || `Serata Disco con DJ Set e angolo Bar (${seasonText})`;
+      defaultSerata = customSerata || `Serata Disco con DJ Set e angolo Bar`;
       defaultIngresso = "20:30";
       defaultStart = "21:00";
       defaultChiusura = "01:00";
     } else {
-      defaultSerata = `Serata Disco con DJ Set e angolo Bar (${seasonText})`;
+      defaultSerata = `Serata Disco con DJ Set e angolo Bar`;
       defaultIngresso = "20:30";
       defaultStart = "21:00";
       defaultChiusura = "01:00";
     }
 
     let message = ":: 🪩 *ᑌᑎᗪᗴᖇᘜᖇOᑌᑎᗪ ᑕᒪᑌᗷ* 🪩 ::\n";
-        message += `                ••• *${seasonText}* •••\n\n`;
+        message += `${seasonText}\n\n`;
         message += `_${defaultSerata}_\n\n`;
         message += `   🗓️ *${formattedDate}*\n\n`;
         message += `   ➡️ Ingresso h. *${ingresso || defaultIngresso}*\n`;
