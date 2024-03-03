@@ -19,6 +19,14 @@ function toggleCustomSerataInput() {
 function generateMessage(event) {
   event.preventDefault();
 
+  const announcementForm = document.getElementById("announcementForm");
+  announcementForm.style.display = "none";
+  const generateButton = document.querySelector(".copy-button");
+  generateButton.style.display = "none";
+
+  const reloadButton = document.getElementById("reloadButton");
+  reloadButton.style.display = "inline-block";
+
   const dataInput = document.getElementById("dataInput").value;
   const tipoSerataInput = document.getElementById("tipoSerataInput").value;
   const customSerataInput = document.getElementById("customSerataInput").value;
@@ -63,14 +71,14 @@ function copyToClipboard(text) {
 
 function handleVisibilityChange() {
   if (document.visibilityState === "visible") {
-    document.title = "Generatore Annunci - UGC";
+    document.title = "Annunci | UGC";
   } else {
     document.title = "UnderGround Club";
   }
 }
 
 function handleWindowFocus() {
-  document.title = "Generatore Annunci - UGC";
+  document.title = "Annunci | UGC";
 }
 
 class WhatsAppFormatter {
@@ -162,3 +170,7 @@ function formatText(text) {
   formattedText = "<pre>" + formattedText + "</pre>";
   return formattedText;
 }
+
+document.getElementById("reloadButton").addEventListener("click", function() {
+  location.reload();
+});

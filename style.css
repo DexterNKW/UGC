@@ -1,26 +1,36 @@
 body {
-    background-color: #101D24;
-    color: #FFFFFF;
+    background-color: #040f14;
+    color: #c5ffe7;
     font-family: Arial, sans-serif;
     text-align: center;
     margin: 0;
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #53bdeb;
+}
+
 h1 {
-    font-size: 24px;
+    font-size: 28px;
     margin-top: 20px;
 }
 
 .logo {
-    width: 28%;
+    width: 240px;
     height: auto;
 }
 
 #container {
     max-width: 600px;
     margin: 0 auto;
-    padding: 15px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,8 +60,8 @@ form {
     padding: 5px;
     border-radius: 5px;
     border: none;
-    background-color: #202c33;
-    color: #FFFFFF;
+    background-color: #0d2533;
+    color: #f7fffd;
     box-sizing: border-box;
 }
 
@@ -73,12 +83,12 @@ form {
 }
 
 .copy-button {
-    margin: 10px;
+    margin: 10px 5px 20px 5px;
     padding: 10px 20px;
     border-radius: 5px;
     border: none;
     background-color: #005c4b;
-    color: #FFFFFF;
+    color: #f7fffd;
     cursor: pointer;
     transition: background-color 0.3s;
     position: relative;
@@ -94,6 +104,7 @@ form {
     padding: 5px;
     border-radius: 5px;
     text-align: center;
+    height: 380px;
 }
 
 #messageOutputContainer textarea {
@@ -132,13 +143,10 @@ footer {
     position: bottom;
     left: 0;
     width: 100%;
-    padding: 10px 0;
-    background-color: #101D24;
     display: inline-block;
 }
 
 footer p {
-    color: rgba(255, 255, 255, 0.8);
     font-size: 12px;
     text-align: center;
     margin: 0;
@@ -236,6 +244,15 @@ img.emoji {
     background-image: url('wallpaper.jpg');
     background-size: cover;
     background-position: center;
-    margin: 10px;
-    padding: 5px 5px 15px 5px;
+    margin: 20px;
+    padding: 5px;
+    border-image: fill 0 linear-gradient(#0001, #000);
+}
+
+#announcementForm {
+    height: 410px;
+}
+
+.data {
+    padding-top: 20px;
 }
